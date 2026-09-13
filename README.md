@@ -4,7 +4,35 @@ An interactive bedroom planner with Three.js and React. Drag and rotate furnitur
 
 ## Run
 
-Use Node.js 22.13 or later. `npm ci`, then `npm run dev`. Production build: `npm run build`.
+Use Node.js 22 (`nvm use` if you use nvm).
+
+```sh
+npm ci
+npm run dev
+```
+
+Open http://localhost:3000. To check the production version locally:
+
+```sh
+npm run build
+npm start
+```
+
+Run `npm run typecheck` for TypeScript checks.
+
+## Deploy to Vercel
+
+1. In Vercel, choose **Add New → Project** and import `ishdafish24/room-studio`. If it is not listed, allow the Vercel GitHub integration to access this repository.
+2. Keep the root directory at the repository root and the framework preset at **Next.js**.
+3. Click **Deploy**. `vercel.json` supplies the install and build commands; use the default output directory.
+
+No environment variables, API keys, database, Cloudflare account, or ChatGPT sign-in are required. Use Node.js 22.x (also specified in `package.json`). Vercel deployment protection, if enabled on your account, is configured separately in Vercel.
+
+This is the existing Bedroom 1203 planner, including its supplied room reference image and source links. Room and furniture dimensions are editable. Layouts are stored only in each visitor's browser; JSON export/import moves them between devices. User accounts, cloud storage, and collaborative editing are not implemented.
+
+## Architecture
+
+Standard Next.js App Router with React, TypeScript, Tailwind CSS, and Three.js. The 3D scene is loaded on the client only. The app has no server-side data dependencies. The former Sites/Cloudflare hosting adapter has been removed so Vercel can build the repository directly.
 
 ## Measurements
 

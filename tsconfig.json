@@ -28,8 +28,7 @@
       ]
     },
     "types": [
-      "node",
-      "@cloudflare/workers-types"
+      "node"
     ]
   },
   "include": [
@@ -44,6 +43,7 @@
     "node_modules",
     "examples",
     "work",
-    "outputs"
+    "outputs",
+    "dist"
   ]
 }
